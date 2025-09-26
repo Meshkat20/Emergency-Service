@@ -49,14 +49,28 @@ for (let i = 0; i < callButtons.length; i++) {
 
         // Current time show kora part
         const now = new Date();
-        const timeString = now.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+        const timeString = now.toLocaleTimeString([], {hour: "2-digit", minute: "2-digit", second: "2-digit" });
 
         // Add to call history
         const li = document.createElement("li");
-        li.innerHTML = serviceName + " <br> " + serviceNumber ;
-        callHistoryList.appendChild(li);
-    });
+        li.className = "flex justify-between p-3 bg-gray-50 rounded-lg shadow mb-6 ";
+
+        li.innerHTML = `
+          <div class="  ">
+           <p class="text-xl font-bold text-gray-800 mb-4">${serviceName}</p>
+          <p class="text-sm text-gray-500">${serviceNumber}</p>
+         </div>
+        <span class="text-xs text-gray-400 flex items-center justify-center ">${timeString}</span>
+    `;
+
+    callHistoryList.appendChild(li);
+  });
 }
+// Clear History part
+
+clearHistoryBtn.addEventListener("click", function () {
+  callHistoryList.innerHTML = "";
+});
 
 
 
