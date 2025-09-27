@@ -72,5 +72,22 @@ clearHistoryBtn.addEventListener("click", function () {
   callHistoryList.innerHTML = "";
 });
 
+let copyCount = 0;
+const copyCounter = document.getElementById("copy-counter");
+const copyButtons = document.getElementsByClassName("copy-btn");
 
+for (let i = 0; i < copyButtons.length; i++) {
+  copyButtons[i].addEventListener("click", function () {
+    const numberToCopy = this.getAttribute("data-number");
 
+    // Clipboard copy 
+    navigator.clipboard.writeText(numberToCopy).then(() => {
+    //   Showing Alert
+      alert("Copied: " + numberToCopy);
+
+      // Counter update
+      copyCount++;
+      copyCounter.innerText = copyCount;
+    })
+  });
+}
