@@ -5,5 +5,7 @@ Ans to Q !. ==  getElementByID is used when we have to select only one element. 
 Ans to Q-2 == We create a new element in to the DOM using document.createElement().. and between the brackets we can add element.  To insert an element in to the DOM we use appendchild() / prepend()/ insertBefore() / append()
 
 Ans to Q-3 ==  When an event occurs on an element, it does not just trigger on that element. it bubbles up to the DOM tree. the event starts at the target element and then moves upward to its parent, grand parent and so on. all the way to the document object. it works like                 if anyone clicks on a child element then child element is clicket first then the parent element. this is how it works.
+
 Ans to Q-4 ==  Event delegation is a powerful technique in JavaScript that let us handle events at a higher level in the DOM. Rather than attaching individual listeners to each child element. It relies on event bubbling, where events propagate up from the target element                  to its ancestors. it is useful because it improves performence by using less event handlers. it also keep logic centralized and easier to maintain. 
+
 Ans to Q-5 ==  Preventdefault stops the browsers default behavior for an event. stoppropagation stops the event from bubling up the parent elements
